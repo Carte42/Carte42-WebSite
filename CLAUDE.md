@@ -3,8 +3,8 @@
 ## Contexte projet
 
 Refonte du site **carte42.fr** (ancienne version Webflow supprimée).
-Hébergement : **GitHub Pages** (repo `carte42/Carte42-WebSite`, public).
-Domaine : **carte42.fr** (DNS OVH → GitHub Pages).
+Hébergement : **GitHub Pages** (repo `Carte42/Carte42-WebSite`, public).
+Domaine : **carte42.fr** (DNS OVH → GitHub Pages — configuré et actif).
 
 ## Stack
 
@@ -20,44 +20,45 @@ src/
   layouts/Layout.astro      # HTML de base, Google Fonts, scroll reveal script
   pages/index.astro         # Page unique, importe tous les composants
   components/
-    Header.astro            # Nav fixe avec menu mobile
+    Header.astro            # Nav fixe avec menu mobile (logo PNG + nav)
     Hero.astro              # Section plein écran avec grille géo
     Poles.astro             # 3 pôles d'expertise (cards)
-    CasPratiques.astro      # 3 cas pratiques (cards + images)
-    APropos.astro           # Bio Allan + photo portrait
-    Contact.astro           # Formulaire Formspree + coordonnées
-    Footer.astro            # Copyright + liens
+    CasPratiques.astro      # 3 cas pratiques (cards + images .png)
+    APropos.astro           # Bio Allan + photo portrait (grille 3 cols, photo col-1)
+    Contact.astro           # Formulaire Formspree (xqeyloby) — sans téléphone
+    Footer.astro            # Copyright + liens + logo PNG
   styles/global.css         # Tailwind base + .bg-grid + .reveal + .card-glow
 public/
   CNAME                     # → carte42.fr
-  favicon.svg               # Logo "42" cyan
+  favicon.svg               # Logo SVG
   images/
-    allan.jpg               # Portrait Allan (à déposer — format 4:5)
+    42-256.png              # Logo Carte 42 (header + footer)
+    allan.JPG               # Portrait Allan (ratio 4:5)
     cases/
-      canopee.jpg           # Cas pratique LiDAR canopée (à déposer)
-      pcrs.jpg              # Cas pratique PCRS (à déposer)
-      sentinel.jpg          # Cas pratique Sentinel (à déposer)
+      canopee.png           # Cas pratique canopée urbaine
+      pcrs.png              # Cas pratique accessibilité CNIG
+      sentinel.png          # Cas pratique détection changements
 .github/workflows/deploy.yml  # GitHub Actions → build + deploy automatique sur push main
 ```
 
 ## Positionnement du site (ne pas dériver)
 
-Site recentré sur **3 pôles uniquement** (ce qui marche) :
+Site recentré sur **3 pôles uniquement** :
 1. **Data Science & IA** — flagship, pipelines, computer vision, LLMs
 2. **Télédétection** — IGN, Pléiades, Copernicus, LiDAR HD, NDVI
 3. **Réglementaire & Institutionnel** — CNIG, PCRS, DT-DICT, PLU, RGPD
 
 **Cibles :** collectivités, bureaux d'études, services techniques — pas les particuliers.
 
-## À faire (checklist déploiement)
+## Checklist déploiement — TOUT FAIT ✅
 
-- [ ] Déposer `public/images/allan.jpg` (portrait)
-- [ ] Déposer `public/images/cases/canopee.jpg`, `pcrs.jpg`, `sentinel.jpg`
-- [ ] Créer compte Formspree → remplacer `VOTRE_ID_FORMSPREE` dans `Contact.astro`
-- [ ] Activer GitHub Pages dans le repo : Settings → Pages → Source : GitHub Actions
-- [ ] Reconfigurer DNS OVH (supprimer anciens CNAME Webflow, ajouter IPs GitHub Pages)
+- [x] Images déposées dans `public/images/` (allan.JPG, 42-256.png, cases/*.png)
+- [x] Formspree configuré — ID `xqeyloby` dans `Contact.astro`
+- [x] GitHub Pages activé — Source : GitHub Actions
+- [x] DNS OVH reconfiguré (Webflow supprimé, IPs GitHub Pages ajoutées)
+- [x] Domaine custom `carte42.fr` configuré dans GitHub Pages
 
-## DNS OVH — IPs GitHub Pages
+## DNS OVH — configuration actuelle
 
 ```
 A     @    185.199.108.153
@@ -66,6 +67,14 @@ A     @    185.199.110.153
 A     @    185.199.111.153
 CNAME www  carte42.github.io.
 ```
+Enregistrements conservés : NS, SPF, MX x4, google-site-verification, DKIM x2
+
+## Git
+
+- Remote : `https://github.com/Carte42/Carte42-WebSite.git`
+- Token stocké localement dans `token.txt` (ignoré par git)
+- Identité git : `Carte42 <contact@carte42.fr>`
+- Push sur `main` → déploiement automatique via GitHub Actions
 
 ## Commandes utiles
 
