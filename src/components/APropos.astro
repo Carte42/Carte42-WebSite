@@ -1,0 +1,70 @@
+---
+---
+
+<section id="a-propos" class="py-24 bg-slate-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 items-center">
+
+      <!-- Photo -->
+      <div class="reveal order-2 md:order-1 md:col-span-1">
+        <div class="relative max-w-xs mx-auto">
+          <!-- Image portrait -->
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-slate-800 border border-slate-700">
+            <img
+              src="/images/allan.JPG"
+              alt="Allan Derrien — Fondateur de Carte 42"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <!-- Card badge flottante -->
+          <div class="absolute -bottom-4 -right-4 bg-slate-900 border border-slate-700 rounded-xl px-5 py-3 shadow-xl">
+            <div class="text-xs text-slate-500 mb-0.5 font-mono">Fondateur</div>
+            <div class="text-white font-display font-semibold">Allan Derrien</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texte -->
+      <div class="reveal reveal-d1 order-1 md:order-2 md:col-span-2">
+        <span class="text-cyan-400 text-sm font-mono tracking-widest uppercase">À propos</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-3 mb-6">
+          Une expertise<br />
+          <span class="text-slate-400 font-medium">ancrée dans la recherche</span>
+        </h2>
+
+        <div class="space-y-4 text-slate-400 leading-relaxed">
+          <p>
+            <strong class="text-slate-200">Data scientist spécialiste de la donnée géographique</strong>,
+            ancien élève de l'<strong class="text-slate-200">École Normale Supérieure (ENS)</strong>,
+            j'ai fondé Carte 42 pour mettre l'intelligence artificielle et la télédétection au service
+            des défis territoriaux concrets.
+          </p>
+          <p>
+            J'accompagne collectivités, bureaux d'études et partenaires institutionnels qui ont besoin
+            d'exploiter leurs géodonnées à grande échelle.
+          </p>
+          <p>
+            Mon approche : un accompagnement individualisé, du cadrage du besoin jusqu'à la livraison,
+            sur vos sujets IA, geodata et télédétection — avec un interlocuteur unique qui connaît
+            votre contexte.
+          </p>
+        </div>
+
+        <!-- Points forts -->
+        <div class="mt-8 grid grid-cols-2 gap-4">
+          {[
+            { label: 'Data scientist', sub: 'Doctorat — École Normale Supérieure' },
+            { label: 'Données souveraines', sub: 'Sources IGN, CNIG, Copernicus' },
+            { label: 'Couverture nationale', sub: 'Missions sur toute la France' },
+            { label: 'Prestataire commande publique', sub: 'Expérience établie avec collectivités et EPCI' },
+          ].map((item) => (
+            <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4">
+              <div class="text-white text-sm font-semibold mb-0.5">{item.label}</div>
+              <div class="text-slate-500 text-xs">{item.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

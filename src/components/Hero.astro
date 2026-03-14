@@ -1,0 +1,73 @@
+---
+const tags = ['IGN', 'Pléiades', 'Copernicus', 'LiDAR HD', 'CNIG', 'PCRS', 'Sentinel'];
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 pt-16">
+
+  <!-- Grille géo en fond -->
+  <div class="absolute inset-0 bg-grid opacity-70"></div>
+
+  <!-- Orbes de lumière -->
+  <div class="absolute top-1/3 left-1/4 w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none"
+       style="background: radial-gradient(circle, rgba(6,182,212,0.08) 0%, transparent 70%)">
+  </div>
+  <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none"
+       style="background: radial-gradient(circle, rgba(99,102,241,0.07) 0%, transparent 70%)">
+  </div>
+
+  <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium mb-10">
+      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+      Géospatial · Intelligence Artificielle · Conformité institutionnelle
+    </div>
+
+    <!-- Titre principal -->
+    <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.08] tracking-tight">
+      Exploitez vos géodonnées<br class="hidden md:block" />
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-400">
+        à grande échelle
+      </span>
+    </h1>
+
+    <!-- Sous-titre -->
+    <p class="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+      Pipelines d'intelligence artificielle, télédétection avancée et expertise réglementaire
+      pour collectivités et bureaux d'études.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="#contact"
+        class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold rounded-xl transition-all duration-200 hover:scale-[1.03] hover:shadow-xl hover:shadow-cyan-500/20"
+      >
+        Parlons de votre projet
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a
+        href="#expertise"
+        class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white font-medium rounded-xl transition-all duration-200"
+      >
+        Découvrir nos pôles
+      </a>
+    </div>
+
+    <!-- Tags technos -->
+    <div class="mt-16 pt-8 border-t border-slate-800/60 flex flex-wrap justify-center gap-x-8 gap-y-3">
+      {tags.map((tag) => (
+        <span class="font-mono text-sm text-slate-500 tracking-widest uppercase">{tag}</span>
+      ))}
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-600 animate-bounce">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+      <path d="M12 5v14M5 12l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</section>
